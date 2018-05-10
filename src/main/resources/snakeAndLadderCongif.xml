@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        <bean name="game" class="com.diviso.domain.SnakeAndLadderGame">
+        <property name="board" ref="board"></property>
+        </bean>
+        <bean id="board" class="com.diviso.domain.SnakeAndLadderGame" factory-method="getBoardInstance">
+        <constructor-arg type="int" value="23"></constructor-arg>
+        <constructor-arg name="message" value="hai static factory argument message"></constructor-arg>
+        <constructor-arg type="java.lang.String" value="blaaaaa"></constructor-arg>
+        <constructor-arg index ="3" value="true"></constructor-arg>
+        <property name="player" ref="playerInstance"></property>
+        </bean>
+        <bean id="playerInstance" factory-bean="board" factory-method="createPlayerInstance"></bean>
+        </beans>

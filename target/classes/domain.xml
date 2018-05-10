@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean  class="com.diviso.domain.Product" name="product1 product2,product3;product4">
+		<property name="name" value="laptop"></property>
+		<property name="price" value="35000"></property>
+		<property name="tax" ref="tax"></property>
+	</bean>
+	<bean id="tax" class="com.diviso.domain.Tax" name="sames">
+	<property name="name" value="gst"></property>
+	<property name="rate" value="2"></property>
+	</bean>
+	
+</beans>
