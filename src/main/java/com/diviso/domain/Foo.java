@@ -1,6 +1,5 @@
 package com.diviso.domain;
 
-import java.beans.ConstructorProperties;
 
 import org.springframework.beans.factory.annotation.Required;
 public class Foo {
@@ -35,6 +34,7 @@ public class Foo {
 	}
 	private Bar bar;
 	private Baz baz;
+	private Player player;
 	private String name;
 	private int age;
 	private String status;
@@ -42,7 +42,7 @@ public class Foo {
 	//@ConstructorProperties({"bar","baz","age","name","status"}) //dont know what
 	public Foo(/*Bar bar,*/Baz baz,int age,String name,String status) { //different combinations when using construstor injection to avoid ambuity
 		// TODO Auto-generated constructor stub
-		this.bar=bar;
+		//this.bar=bar;
 		this.baz=baz;
 		this.name=name;
 		this.age=age;
@@ -55,5 +55,12 @@ public class Foo {
 		bar.getStatus();
 		baz.getStatus();
 	}
+	public Player getPlayer() {
+		return player;
+	}
+	public void setPlayer(Player player) {
+		this.player = player;
+	}
+	
 
 }

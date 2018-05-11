@@ -4,16 +4,28 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
         
-        <bean id="foo" class="com.diviso.domain.Foo">
-        <!-- <constructor-arg ref="bar"></constructor-arg> -->
-        <constructor-arg >
-        <ref bean="baz"/>  <!-- using tags ref -->
-        </constructor-arg>
-        <property name="bar" ref="bar"></property>  <!-- can be nullify using ull tags this is neater ref attribute usage -->
-        <constructor-arg type="int" value="32"></constructor-arg>
-        <constructor-arg index="2" value="i am foo"></constructor-arg>
-        <constructor-arg name="status" ><null></null></constructor-arg>
-        </bean>
-        <bean id="bar" class="com.diviso.domain.Bar"></bean>
-                <bean id="baz" class="com.diviso.domain.Baz"></bean>
-                </beans>
+        
+
+	<bean id="foo" class="com.diviso.domain.Foo">
+		<!-- <property name="player">
+			<idref bean="player" />
+		</property> -->
+
+		<!-- <constructor-arg ref="bar"></constructor-arg> -->
+		<property name="bar" ref="bar"></property>  <!-- can be nullify using ull tags this is neater ref attribute usage -->
+
+		<constructor-arg>
+			<ref bean="baz" />  <!-- using tags ref -->
+		</constructor-arg>
+		
+		<constructor-arg type="int" value="32"></constructor-arg>
+		<constructor-arg index="2" value="i am foo"></constructor-arg>
+		<constructor-arg name="status">
+			<null></null>
+		</constructor-arg>
+	</bean>
+	<bean id="bar" class="com.diviso.domain.Bar"></bean>
+	<bean id="baz" class="com.diviso.domain.Baz"></bean>
+		<bean id="player" class="com.diviso.domain.Player"></bean>
+	
+</beans>
