@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="classRoom" class="com.diviso.domain.ClassRoom">
+		<property name="props">
+			<props>
+				<prop key="standard">7th</prop>
+				<prop key="divison">b-divison</prop>
+			</props>
+		</property>
+		<property name="studentsList">
+			<list>
+				<value>student string in list</value>
+				<ref bean="student" />
+				<ref bean="student" />
+			</list>
+		</property>
+		<property name="studentsSet">
+			<set>
+				<value>student string in set</value>
+				<ref bean="student" />
+								<ref bean="student" />
+												<ref bean="student" />
+				
+			</set>
+		</property>
+		<property name="studentsMap">
+			<map>
+				<entry key="1" value="hai im in map"></entry>
+				<entry key="2" value-ref="student"></entry>
+			</map>
+		</property>
+	</bean>
+
+<bean id="student" class ="com.diviso.domain.Student"></bean>
+
+
+
+
+
+</beans>
